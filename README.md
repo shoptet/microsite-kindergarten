@@ -10,13 +10,14 @@
 - Install latest version of Wordpress from https://wordpress.org/download/
 - `cd path_to_wordpress/wp-content/themes/`
 - `git clone git@github.com:Shoptet/shoptet-wp-theme.git shoptet-wp-theme`
-- `git submodule update --init --recursive`
 - `cd shoptet-wp-theme`
+- `git submodule init`
+- `git submodule update`
 - `git clone git@github.com:Shoptet/microsite-api.git src`
 - `cd src`
-- `$ npm install` - only for first time
-- `$ grunt` - enable watch mode for SCSS & JS files
-- `$ grunt build` - build CSS & JS files
+- `npm install` - only for first time
+- `grunt` - enable watch mode for SCSS & JS files
+- `grunt build` - build CSS & JS files
 
 Go to WP admin and set **shoptet-wp-theme** template
 
@@ -34,7 +35,7 @@ git@github.com:Shoptet/microsite-styles.git or
 git@github.com:Shoptet/shoptet-wp-theme.git
 
 ## Design guide
-http://YOUR_WORDPRESS_SERVER/wp-content/themes/shoptet-theme/scaffolding/
+See `shoptet-wp-theme/scaffolding/index.html` 
 
 
 
