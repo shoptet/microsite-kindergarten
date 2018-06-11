@@ -9,10 +9,10 @@
 
 - Install latest version of Wordpress from https://wordpress.org/download/
 - `cd path_to_wordpress/wp-content/themes/`
-- `git clone https://github.com/Shoptet/shoptet-wp-theme.git shoptet-wp-theme`
+- `git clone git@github.com:Shoptet/shoptet-wp-theme.git shoptet-wp-theme`
 - `git submodule update --init --recursive`
 - `cd shoptet-wp-theme`
-- `git clone https://github.com/Shoptet/microsite-api.git src`
+- `git clone git@github.com:Shoptet/microsite-api.git src`
 - `cd src`
 - `$ npm install` - only for first time
 - `$ grunt` - enable watch mode for SCSS & JS files
@@ -21,9 +21,6 @@
 Go to WP admin and set **shoptet-wp-theme** template
 
 ## Workflow
-- template works with two submodules:
-    - https://github.com/Shoptet/microsite-api.git, folder `src`
-    - https://github.com/Shoptet/microsite-styles.git, folder `scaffolding`
 - DO NOT edit anything outside **src** repository*
 - you can use `src/functions.php`, e.g. for registering new widgets
 - you can create custom page templates in `src` folder
@@ -33,8 +30,8 @@ Go to WP admin and set **shoptet-wp-theme** template
 
 -----
 * in justified cases you can make pull request as well for
-https://github.com/Shoptet/microsite-styles.git or
-https://github.com/Shoptet/shoptet-wp-theme.git
+git@github.com:Shoptet/microsite-styles.git or
+git@github.com:Shoptet/shoptet-wp-theme.git
 
 ## Design guide
 http://YOUR_WORDPRESS_SERVER/wp-content/themes/shoptet-theme/scaffolding/
