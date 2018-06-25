@@ -12,7 +12,7 @@
                     <?php echo $post->post_content;?>
                 </p>
                 <p>
-                    <a href="<?php echo $post->post_name;?>" class="btn btn-primary">Přejít na článek</a>
+                    <a href="<?php echo $post->post_name;?>" class="btn btn-secondary">Přejít na článek</a>
                 </p>
             </div>
             <?php
@@ -28,7 +28,7 @@
                     <?php echo $post->post_content;?>
                 </p>
                 <p>
-                    <a href="/<?php echo $post->post_name;?>" class="btn btn-primary">Přejít na článek</a>
+                    <a href="/<?php echo $post->post_name;?>" class="btn btn-secondary">Přejít na článek</a>
                 </p>
             </div>
             <?php
@@ -51,7 +51,7 @@
                         <?php echo $post->post_content;?>
                     </p>
                     <p>
-                        <a href="<?php echo $post->post_name;?>" class="btn btn-primary">Přejít na článek</a>
+                        <a href="<?php echo $post->post_name;?>" class="btn btn-secondary">Přejít na článek</a>
                     </p>
                 </div>
                 <div class="half">
