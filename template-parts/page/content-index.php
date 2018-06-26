@@ -9,7 +9,9 @@
             <div class="half">
                 <h5><?php echo $post->post_title;?></h5>
                 <p>
-                    <?php echo $post->post_content;?>
+                    <?php
+                    $content = apply_filters( 'the_content', $post->post_content );
+                    echo $content;?>
                 </p>
                 <p>
                     <a href="<?php echo $post->post_name;?>" class="btn btn-secondary">Přejít na článek</a>
@@ -25,7 +27,9 @@
             <div class="half">
                 <h5><?php echo $post->post_title;?></h5>
                 <p>
-                    <?php echo $post->post_content;?>
+                    <?php
+                    $content = apply_filters( 'the_content', $post->post_content );
+                    echo $content;?>
                 </p>
                 <p>
                     <a href="/<?php echo $post->post_name;?>" class="btn btn-secondary">Přejít na článek</a>
@@ -48,7 +52,9 @@
             <div class="halfs indented">
                 <div class="half">
                     <p>
-                        <?php echo $post->post_content;?>
+                        <?php
+                        $content = apply_filters( 'the_content', $post->post_content );
+                        echo $content;?>
                     </p>
                     <p>
                         <a href="<?php echo $post->post_name;?>" class="btn btn-secondary">Přejít na článek</a>
@@ -75,7 +81,7 @@
         if (!empty($post)) {
             ?>
             <h2 id="kontakt"><?php echo $post->post_title;?></h2>
-            <div class="halfs indented">
+            <div class="halfs aligned-left indented">
                 <div class="half">
                     <p>
                         <?php echo $post->post_content;?>
