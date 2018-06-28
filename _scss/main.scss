@@ -1,6 +1,190 @@
 $fa-font-path: "../../../scaffolding/vendor/fa/webfonts";
 $claim-bg-image: url('../img/claim.png');
 $colorbox-path: "../../../scaffolding/img/colorbox/";
+$kindergarten-blue: #d0effc;
+$kindergarten-blue-active: #14b1ef;
 
 @import "../../scaffolding/shoptet";
+@import "../../scaffolding/vendor/bs/scss/close";
+@import "../../scaffolding/vendor/bs/scss/alert";
+
 @import "modules/variables";
+
+.#{$fa-css-prefix}-exclamation-circle:before { content: fa-content($fa-var-exclamation-circle); }
+.#{$fa-css-prefix}-times-circle:before { content: fa-content($fa-var-times-circle); }
+.#{$fa-css-prefix}-check-circle:before { content: fa-content($fa-var-check-circle); }
+.#{$fa-css-prefix}-question-circle:before { content: fa-content($fa-var-question-circle); }
+
+body {
+    background: #fff;
+}
+
+#navigation {
+    display: none;
+    visibility: hidden;
+}
+
+.section-claim {
+    @media (max-width: map-get($grid-breakpoints, 'md') - 1) {
+        .claim-inner {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    @media (max-width: map-get($grid-breakpoints, 'sm') - 1) {
+        display: none;
+        visibility: hidden;
+    }
+}
+
+.header-inner > div.header-search {
+    @media (max-width: map-get($grid-breakpoints, 'md') - 1) {
+        max-width: 100%;
+    }
+}
+
+.claim-secondary {
+    text-align: center;
+    font-size: $font-size-lg;
+    font-weight: 300;
+}
+
+.section-primary {
+    border: none;
+}
+
+.section-tertiary {
+    background: #fff;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.content-container {
+    border: 1px solid $kindergarten-blue;
+    border-radius: 10px;
+    padding: $spacer round($spacer * 1.5);
+
+    @media (max-width: map-get($grid-breakpoints, 'lg') - 1) {
+        padding: $spacer;
+    }
+
+    @media (max-width: map-get($grid-breakpoints, 'md') - 1) {
+        padding: round( $spacer / 2 );
+    }
+
+    @media (max-width: map-get($grid-breakpoints, 'sm') - 1) {
+        padding: round( $spacer / 3 );
+    }
+}
+
+/* kindergarten Menu */
+.shp-kindergarten-menu {
+    margin-top: $spacer;
+    position: relative;
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 6.25rem;
+        height: 100%;
+        @include gradient-x(rgba(255,255,255,0), rgba(255,255,255,1));
+        pointer-events: none;
+    }
+
+    ul {
+        display: flex;
+        counter-reset: item;
+        padding: 0;
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: left;
+        margin: 0 $spacer;
+        white-space: nowrap;
+        overflow-x: auto;
+
+        @media (max-width: map-get($grid-breakpoints, 'lg') - 1) {
+            margin: 0 round( $spacer / 2 );
+        }
+
+        @media (max-width: map-get($grid-breakpoints, 'md') - 1) {
+            margin: 0 round( $spacer / 3 );
+        }
+
+        &:after {
+            clear: both;
+        }
+
+        li {
+            list-style-type: none;
+            counter-increment: item;
+            display: block;
+            float: left;
+            padding: 10px 25px;
+            background: $kindergarten-blue;
+            margin: 0 1px;
+
+            @media (max-width: map-get($grid-breakpoints, 'md') - 1) {
+                padding: 5px 15px;
+            }
+
+            &:before {
+                font-weight: bold;
+                padding-right: 0.5em;
+                text-align: right;
+                content: counter(item) ".";
+                color: #1f1f1f;
+                display: inline;
+            }
+
+            &:first-child {
+                border-top-left-radius: 10px;
+            }
+
+            &:last-child {
+                border-top-right-radius: 10px;
+            }
+
+            a {
+                font-weight: normal;
+                font-size: 16px;
+                color: #1f1f1f;
+            }
+
+            &.current-menu-item {
+                background: $kindergarten-blue-active;
+                padding: 15px 35px;
+                border-radius: 10px 10px 0 0;
+
+                @media (max-width: map-get($grid-breakpoints, 'md') - 1) {
+                    padding: 10px 10px;
+                }
+
+                &:before,
+                a {
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
+
+.alert {
+    .alert-icon {
+        font-size: 300%;
+
+        @media (max-width: map-get($grid-breakpoints, 'lg') - 1) {
+            font-size: 250%;
+        }
+
+        @media (max-width: map-get($grid-breakpoints, 'md') - 1) {
+            font-size: 250%;
+        }
+
+        @media (max-width: map-get($grid-breakpoints, 'sm') - 1) {
+            display: none;
+        }
+    }
+}
