@@ -4,7 +4,7 @@
 
 <section class="section section-tertiary">
     <div class="section-inner container text-center">
-        <?php wp_nav_menu( array( 'theme_location' => 'kindergarten-menu', 'container_class' => 'shp-kindergarten-menu' ) ); ?>
+        <?php wp_nav_menu( array( 'theme_location' => 'kindergarten-menu', 'container_class' => 'shp-kindergarten-menu responsive-nav', 'menu_class' => 'visible-links' ) ); ?>
     </div>
 </section>
 

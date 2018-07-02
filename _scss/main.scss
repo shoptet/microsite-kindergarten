@@ -10,11 +10,7 @@ $kindergarten-blue-active: #14b1ef;
 
 @import "modules/variables";
 
-.#{$fa-css-prefix}-exclamation-circle:before { content: fa-content($fa-var-exclamation-circle); }
-.#{$fa-css-prefix}-times-circle:before { content: fa-content($fa-var-times-circle); }
-.#{$fa-css-prefix}-check-circle:before { content: fa-content($fa-var-check-circle); }
-.#{$fa-css-prefix}-question-circle:before { content: fa-content($fa-var-question-circle); }
-
+/* OVERRIDES */
 body {
     background: #fff;
 }
@@ -54,6 +50,8 @@ body {
     border: none;
 }
 
+
+/* CUSTOM STYLES */
 .section-tertiary {
     background: #fff;
     padding-top: 0;
@@ -63,11 +61,7 @@ body {
 .content-container {
     border: 1px solid $kindergarten-blue;
     border-radius: 10px;
-    padding: $spacer round($spacer * 1.5);
-
-    @media (max-width: map-get($grid-breakpoints, 'lg') - 1) {
-        padding: $spacer;
-    }
+    padding: $spacer;
 
     @media (max-width: map-get($grid-breakpoints, 'md') - 1) {
         padding: round( $spacer / 2 );
@@ -78,40 +72,14 @@ body {
     }
 }
 
-/* kindergarten Menu */
-.shp-kindergarten-menu {
+/* KINDERGARTEN MENU */
+.responsive-nav.shp-kindergarten-menu {
     margin-top: $spacer;
     position: relative;
 
-    &:after {
-        content: '';
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 6.25rem;
-        height: 100%;
-        @include gradient-x(rgba(255,255,255,0), rgba(255,255,255,1));
-        pointer-events: none;
-    }
-
-    ul {
-        display: flex;
-        counter-reset: item;
+    ul.visible-links {
+        margin: 0 auto;
         padding: 0;
-        flex-direction: row;
-        align-items: flex-end;
-        justify-content: left;
-        margin: 0 $spacer;
-        white-space: nowrap;
-        overflow-x: auto;
-
-        @media (max-width: map-get($grid-breakpoints, 'lg') - 1) {
-            margin: 0 round( $spacer / 2 );
-        }
-
-        @media (max-width: map-get($grid-breakpoints, 'md') - 1) {
-            margin: 0 round( $spacer / 3 );
-        }
 
         &:after {
             clear: both;
@@ -119,56 +87,64 @@ body {
 
         li {
             list-style-type: none;
-            counter-increment: item;
-            display: block;
-            float: left;
-            padding: 10px 25px;
-            background: $kindergarten-blue;
-            margin: 0 1px;
-
-            @media (max-width: map-get($grid-breakpoints, 'md') - 1) {
-                padding: 5px 15px;
-            }
-
-            &:before {
-                font-weight: bold;
-                padding-right: 0.5em;
-                text-align: right;
-                content: counter(item) ".";
-                color: #1f1f1f;
-                display: inline;
-            }
-
-            &:first-child {
-                border-top-left-radius: 10px;
-            }
-
-            &:last-child {
-                border-top-right-radius: 10px;
-            }
+            vertical-align: bottom;
 
             a {
+                padding: 10px 25px;
+                margin: 0 1px;
                 font-weight: normal;
                 font-size: 16px;
                 color: #1f1f1f;
+                background: $kindergarten-blue;
+                display: block;
+
+                @media (max-width: map-get($grid-breakpoints, 'md') - 1) {
+                    padding: 5px 15px;
+                }
             }
 
-            &.current-menu-item {
+            &.current-menu-item a {
                 background: $kindergarten-blue-active;
                 padding: 15px 35px;
                 border-radius: 10px 10px 0 0;
+                color: #fff;
+                margin-bottom: -1px;
 
                 @media (max-width: map-get($grid-breakpoints, 'md') - 1) {
                     padding: 10px 10px;
                 }
 
-                &:before,
-                a {
+                &:before {
                     color: #fff;
                 }
             }
+
+            &:first-child a {
+                border-top-left-radius: 10px;
+            }
+
+            &:last-child a {
+                border-top-right-radius: 10px;
+            }
         }
     }
+
+    &.responsive-nav button {
+        top: unset;
+        bottom: 0;
+        height: 80%;
+    }
+
+    .hidden-links {
+        a {
+            padding: 10px 25px;
+            font-weight: normal;
+            font-size: 14px;
+            color: #1f1f1f;
+            background: $kindergarten-blue;
+        }
+    }
+
 }
 
 .alert {
@@ -188,3 +164,4 @@ body {
         }
     }
 }
+
