@@ -1,16 +1,14 @@
-$fa-font-path: "../../../scaffolding/vendor/fa/webfonts";
-$claim-bg-image: url('../img/claim.png');
-$colorbox-path: "../../../scaffolding/img/colorbox/";
 $kindergarten-blue: #d0effc;
 $kindergarten-blue-active: #14b1ef;
 
-@import "../../scaffolding/shoptet";
-@import "../../scaffolding/vendor/bs/scss/close";
-@import "../../scaffolding/vendor/bs/scss/alert";
+@import "../../scaffolding/shoptet/variables-bootstrap";
+@import "../../scaffolding/vendor/bs/scss/functions";
+@import "../../scaffolding/vendor/bs/scss/variables";
+@import "../../scaffolding/shoptet/variables-shoptet";
+@import "../../scaffolding/vendor/bs/scss/mixins";
 
 @import "modules/variables";
 
-/* OVERRIDES */
 body {
     background: #fff;
 }
@@ -146,22 +144,3 @@ body {
     }
 
 }
-
-.alert {
-    .alert-icon {
-        font-size: 300%;
-
-        @media (max-width: map-get($grid-breakpoints, 'lg') - 1) {
-            font-size: 250%;
-        }
-
-        @media (max-width: map-get($grid-breakpoints, 'md') - 1) {
-            font-size: 250%;
-        }
-
-        @media (max-width: map-get($grid-breakpoints, 'sm') - 1) {
-            display: none;
-        }
-    }
-}
-
