@@ -9,6 +9,7 @@ $kindergarten-blue-active: #14b1ef;
 
 @import "modules/variables";
 
+/* Change end */
 body {
     background: #fff;
 }
@@ -40,14 +41,13 @@ body {
 
 .claim-secondary {
     text-align: center;
-    font-size: $font-size-lg;
+    font-size: 1.4rem;
     font-weight: 300;
 }
 
 .section-primary {
     border: none;
 }
-
 
 /* CUSTOM STYLES */
 .section-tertiary {
@@ -59,26 +59,34 @@ body {
 .content-container {
     border: 1px solid $kindergarten-blue;
     border-radius: 10px;
-    padding: $spacer;
+    padding: ($spacer / 1.25) ($spacer / 1.25) ($spacer / 2);
 
     @media (max-width: map-get($grid-breakpoints, 'md') - 1) {
-        padding: round( $spacer / 2 );
+        padding: ($spacer / 1.5) ($spacer / 1.5) ($spacer / 2);
     }
 
     @media (max-width: map-get($grid-breakpoints, 'sm') - 1) {
-        padding: round( $spacer / 3 );
+        padding: $spacer / 2;
+    }
+
+    &:after {
+        clear: both;
+        content: "";
+        display: block;
     }
 }
 
 /* KINDERGARTEN MENU */
 .responsive-nav.shp-kindergarten-menu {
-    margin-top: $spacer;
+    margin-top: 0;
     position: relative;
 
     ul.visible-links {
         margin: 0 auto;
         padding: 0;
-
+        @media (max-width: map-get($grid-breakpoints, 'lg') - 1) {
+            margin: 0 0 0 8px;
+        }
         &:after {
             clear: both;
         }
@@ -95,6 +103,7 @@ body {
                 color: #1f1f1f;
                 background: $kindergarten-blue;
                 display: block;
+                white-space: nowrap;
 
                 @media (max-width: map-get($grid-breakpoints, 'md') - 1) {
                     padding: 5px 15px;
@@ -127,10 +136,14 @@ body {
         }
     }
 
-    &.responsive-nav button {
+    &.responsive-nav .navigation-btn {
         top: unset;
         bottom: 0;
-        height: 80%;
+        height: 85%;
+        border-radius: 5px;
+        @media (max-width: map-get($grid-breakpoints, 'md') - 1) {
+            height: 80%;
+        }
     }
 
     .hidden-links {
@@ -140,7 +153,7 @@ body {
             font-size: 14px;
             color: #1f1f1f;
             background: $kindergarten-blue;
+            display: block;
         }
     }
-
 }

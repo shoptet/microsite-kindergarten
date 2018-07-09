@@ -1,4 +1,4 @@
-<?php /* Template Name: Custom page template */ ?>
+<?php /* Template Name: Shoptet Skolka Homepage template */ ?>
 <?php get_header(); ?>
 <?php get_template_part( 'src/template-parts/page/content', 'claim' ); ?>
 
@@ -16,14 +16,14 @@ while ( have_posts() ) : the_post(); ?>
         <div class="section-inner container">
             <div class="content-container">
                 <?php the_content(); ?>
+                <?php get_template_part( 'template-parts/post/content', 'widget' ); ?>
             </div>
         </div>
     </section>
 
     <section class="section section-primary">
         <div class="section-inner container">
-            <h2 class="sr-only"><?php _e('Navigace pro příspěvek', 'shoptet-wp-theme'); ?></h2>
-            <?php getPrevNext(); ?>
+            <?php get_template_part( 'template-parts/utils/content', 'navigation' ); ?>
         </div>
     </section>
 
