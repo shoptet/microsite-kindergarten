@@ -139,10 +139,11 @@ body {
     &.responsive-nav .navigation-btn {
         top: unset;
         bottom: 0;
-        height: 85%;
+        height: 44px;
         border-radius: 5px;
         @media (max-width: map-get($grid-breakpoints, 'md') - 1) {
-            height: 80%;
+            height: 34px;
+            padding-top: 5px;
         }
     }
 
