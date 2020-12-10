@@ -5,6 +5,17 @@ function register_shp_kindergarten_menu() {
 }
 add_action( 'init', 'register_shp_kindergarten_menu' );
 
+/**
+ * Add query arguments to post count api
+ */
+add_filter( 'shoptet_post_count_query_args', function($query_args) {
+    return [
+        'skolkaArticlesCount' => [
+            'post_type' => 'page',
+            'post_status' => 'publish',
+        ],
+    ];
+} );
 
 /* Shoptet WP General Settings Customizer  */
 function shp_wp_customizer_claim($wp_customize) {
